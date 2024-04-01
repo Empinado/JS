@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //массив - ключ значение
+        const week = {
+                1: 'Понедельник',
+                2: 'Вторник',
+                3: 'Среда',
+                4: 'Четверг',
+                5: 'Пятница',
+                6: 'Суббота',
+                7: 'Воскресенье',
+            }
+            //вывод массив после точки ключ
+        console.log(week[1], week[2]);
+
+        const user = {
+            name: 'Jhon',
+            surname: 'Ka',
+            age: 30
+        }
+
+        console.log(`${user.name} - ${user.surname} - ${user.age}`);
+
+        user.patronymic = prompt('Отчество');
+        console.log(user);
+
+        delete user.surname;
+        console.log(user);
+    </script>
+</body>
+
+</html>
