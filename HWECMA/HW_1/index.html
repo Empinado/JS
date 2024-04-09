@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('ДЗ Урок 1');
+
+        // 1) Дан массив const arr = [1, 5, 7, 9] с помощью Math.min и spread оператора, найти минимальное число в массиве, решение задание должно состоять из одной строки
+        console.log('Задание 1');
+
+        const arr = [1, 5, 7, 9];
+
+        console.log(`Массив: [${arr}]\nНаименьшее число в массиве: ${Math.min(...arr)}`);
+
+        // 2) Напишите функцию createCounter, которая создает счетчик и возвращает объект с двумя методами: increment и decrement. Метод increment должен увеличивать значение счетчика на 1, а метод decrement должен уменьшать значение счетчика на 1. Значение счетчика должно быть доступно только через методы объекта, а не напрямую.
+        console.log('Задание 2');
+
+        function createCounter(initialValue) {
+            let value = initialValue;
+            const num = 1;
+            return {
+                increment() {
+                    value += num;
+                },
+                decrement() {
+                    value -= num;
+                },
+                getValue() {
+                    return value;
+                }
+
+            }
+        }
+
+        const counter = createCounter(1);
+
+        counter.increment();
+        counter.increment();
+        counter.decrement();
+        console.log('Для стандартного значения счетчика задано число: 1.\nРезультат работы методов counter, после двухкратного использования метода increment и однократного decrement:' + counter.getValue());
+
+        // 3) Напишите рекурсивную функцию findElementByClass, которая принимает корневой элемент дерева DOM и название класса в качестве аргументов и возвращает первый найденный элемент с указанным классом в этом дереве.
+        console.log('Задание 3');
+
+        console.log(`Из формулировки задания не понял, как его выполнять.`);
+    </script>
+</body>
+
+</html>
