@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        console.log('ДЗ Урок 2');
+        // Задание 1: ""
+        // Управление библиотекой книг ""
+
+        // Реализуйте класс Book, представляющий книгу, со следующими свойствами и методами:
+
+        // Свойство title(название) - строка, название книги.
+        // Свойство author(автор) - строка, имя автора книги.
+        // Свойство pages(количество страниц) - число, количество страниц в книге.
+        // Метод displayInfo() - выводит информацию о книге(название, автор и количество страниц).
+
+        console.log('Задание 1');
+
+        class Book {
+            constructor(title, author, pages) {
+                this.title = title;
+                this.author = author;
+                this.pages = pages;
+            }
+
+            get displayInfo() {
+                return console.log(`Информация о книге: \nНазвание - ${this.title}, \nАвтор - ${this.author}, \nСтраницы - ${this.pages}`);
+            }
+        }
+
+        const book_1 = new Book('На дне', 'Горький', '200');
+
+        book_1.displayInfo;
+
+        // Задание 2: ""
+        // Управление списком студентов ""
+        // Реализуйте класс Student, представляющий студента, со следующими свойствами и методами:
+
+        // Свойство name(имя) - строка, имя студента.
+        // Свойство age(возраст) - число, возраст студента.
+        // Свойство grade(класс) - строка, класс, в котором учится студент.
+        // Метод displayInfo() - выводит информацию о студенте(имя, возраст и класс).
+        // javascript
+
+        console.log('Задание 2');
+
+        class Student {
+            constructor(name, age, grade, ) {
+                this.name = name;
+                this.age = age;
+                this.grade = grade;
+            }
+
+            get displayInfo() {
+                return console.log(`Информация о студенте:\nИмя - ${this.name}, \nВозраст - ${this.age}, \nКласс - ${this.grade}`);
+            }
+        }
+
+        const student1 = new Student('Sasha', '26', '2233');
+        student1.displayInfo;
+
+        const student2 = new Student('Olegio', '22', '2343');
+        student2.displayInfo;
+    </script>
+
+</body>
+
+</html>
