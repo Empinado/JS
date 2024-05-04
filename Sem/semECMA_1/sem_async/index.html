@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Users List</h1>
+    <button class="sort">Sort</button>
+    <ul class="users-list"></ul>
+    <script>
+        // function delayedMessage(message, delay) {
+        //     setTimeout(() => {
+        //         console.log(message);
+        //     }, delay)
+        // }
+
+        // delayedMessage('message 1', 2000)
+        // delayedMessage('message 2', 3000)
+        // delayedMessage('message 3', 4000)
+
+        // const tasks = [{
+        //     name: 'task1',
+        //     time: 1000
+        // }, {
+        //     name: 'task2',
+        //     time: 2000
+        // }, {
+        //     name: 'task3',
+        //     time: 3000
+        // }, {
+        //     name: 'task4',
+        //     time: 4000
+        // }, {
+        //     name: 'task5',
+        //     time: 5000
+        // }];
+
+        // const taskManager = (taskList, interval) => {
+        //     let delay = 0;
+        //     taskList.forEach(task => {
+        //         setTimeout(() => {
+        //             console.log(task.name);
+        //         }, delay);
+        //         delay += interval;
+        //     });
+        // }
+
+        // taskManager(tasks, 1000);
+
+        // const loadData = (url) => {
+        //     const xhr = new XMLHttpRequest();
+        //     //Обработчик события, в уловиях успешный запрос и успешный статус
+        //     xhr.onreadystatechange = function() {
+        //         if (xhr.readyState === 4 && xhr.status === 200) {
+        //             console.log(xhr.responseText);
+        //         }
+        //         xhr.open('GET', url, true);
+        //         // xhr.send(); нет корректного адреса для проверки функционала
+        //     }
+        // }
+
+        //Переделка прошлой функции под Fetch
+
+        const usersList = document.querySelector('.users-list');
+
+        const renderUsersList = (users) => {
+            usersList.innerHTML = '';
+            users.forEach(user => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <div>
+                        <h2>${user.name}<h2>
+                        <p>${user.email}<p>
+                    <div>
+                `
+                usersList.append(listItem);
+            });
+        }
+
+        const sortUsersByName = (users) => {
+            const sortedUsers = users.sort((a, b) => {
+                const nameA = a.name.toLowerCase();
+                const nameB = b.name.toLowerCase();
+                if (nameA < nameB) {
+                    return -1;
+                }
+
+                if (nameA > nameB) {
+                    return 1;
+                }
+                return 0;
+            })
+            renderUsersList(sortedUsers);
+        }
+
+        fetch('http://jsonplaceholder.typicode.com/users') //хватаем данные
+            .then((result) => result.json()) //далее переводим полученные данные в формат джейсон
+            .then(data => {
+                renderUsersList(data); //передаем данные в функцию 
+                const sortEl = document.querySelector('.sort'); //ссылаемся на елемент html по классу 
+                sortEl.addEventListener('click', function(e) { //добавляем сортировку по клику на кнопку
+                    sortUsersByName(data);
+                })
+            }).catch((err) => {
+                console.error('So much Errors, do something');
+            });
+
+        // fetch('http://jsonplaceholder.typicode.com/users')
+        //     .then((result) => {
+        //         //Если ок, то получилось получить доступ к серверу
+        //         if (result.ok) {
+        //             return result.text();
+        //         } //если не ок, то ошибка
+        //         throw new Error('Error 1');
+        //     }).then(data => {
+        //         console.log(data);
+        //     }).catch((err) => {
+        //         console.error('So much Errors, do something');
+        //     });
+    </script>
+</body>
+
+</html>
