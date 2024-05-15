@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   submitReview.addEventListener("click", function () {
-    const reviewText = reviewInput.value.trim();
+    const reviewText = reviewInput.value.trim(); //Метод trim() удаляет пробельные символы с начала и конца строки.
 
     try {
       addReview(reviewText);

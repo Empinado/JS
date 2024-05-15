@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="input-text" type="text" placeholder="Input data" />
+    <button id="btn1">Save</button>
+    <button id="btn2">Upload</button>
+    <button id="btn3">Delite</button>
+    <div id="conteiner"></div>
+
+    <script>
+      document.getElementById("btn1").addEventListener("click", () => {
+        const input = document.getElementById("input-text").value;
+        localStorage.setItem("savedText", input); //первое это ключ, под которым будет записано значение input
+        alert("Text saved!");
+      });
+
+      document.getElementById("btn2").addEventListener("click", () => {
+        const savedText = localStorage.getItem("savedText"); //получаем из лс значение
+        document.getElementById("conteiner").textContent = savedText
+          ? savedText
+          : "local storage clear"; //с помощью тернарного оператора мы проверяем наличие контента в ЛС
+      });
+
+      document.getElementById("btn3").addEventListener("click", () => {
+        localStorage.removeItem("savedText");
+        document.getElementById("container").textContent = "Text clear";
+      });
+    </script>
+  </body>
+</html>

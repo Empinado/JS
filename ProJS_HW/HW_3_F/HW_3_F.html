@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Отзывы о продуктах</title>
+  </head>
+  <body>
+    <h1>Добавить отзыв</h1>
+    <input type="text" id="productName" placeholder="Название продукта" />
+    <textarea id="reviewText" placeholder="Ваш отзыв"></textarea>
+    <button onclick="addReview()">Добавить отзыв</button>
+
+    <h1>Просмотр отзывов</h1>
+    <ul id="productList"></ul>
+    <div id="reviews"></div>
+
+    <script>
+      function addReview() {
+        const productName = document.getElementById("productName").value;
+        const reviewText = document.getElementById("reviewText").value;
+
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || {};
+
+        if (!reviews[productName]) {
+          reviews[productName] = [];
+        }
+
+        reviews[productName].push(reviewText);
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+        displayProducts();
+      }
+
+      function displayProducts() {
+        const productList = document.getElementById("productList");
+        const reviewsDiv = document.getElementById("reviews");
+        productList.innerHTML = "";
+        reviewsDiv.innerHTML = "";
+
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || {};
+
+        for (let product in reviews) {
+          const li = document.createElement("li");
+          li.textContent = product;
+          li.addEventListener("click", () =>
+            displayReviews(product, reviews[product])
+          );
+          productList.appendChild(li);
+        }
+      }
+
+      function displayReviews(product, reviews) {
+        const reviewsDiv = document.getElementById("reviews");
+        reviewsDiv.innerHTML = "";
+
+        for (let review of reviews) {
+          const p = document.createElement("p");
+          p.textContent = review;
+
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "Удалить";
+          deleteButton.addEventListener("click", () =>
+            deleteReview(product, review)
+          );
+
+          reviewsDiv.appendChild(p);
+          reviewsDiv.appendChild(deleteButton);
+        }
+      }
+
+      function deleteReview(product, review) {
+        let reviews = JSON.parse(localStorage.getItem("reviews"));
+        const index = reviews[product].indexOf(review);
+        if (index !== -1) {
+          reviews[product].splice(index, 1);
+          localStorage.setItem("reviews", JSON.stringify(reviews));
+          displayReviews(product, reviews[product]);
+        }
+      }
+
+      displayProducts();
+    </script>
+  </body>
+</html>
