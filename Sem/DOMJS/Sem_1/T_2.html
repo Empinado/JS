@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <button class="btnAdd">Add el</button>
+      <button class="btnDel">Del el</button>
+      <button class="btnClon">Clon el</button>
+    </section>
+    <section class="container"></section>
+    <script>
+      const btnAdd = document.querySelector(".btnAdd");
+      const btnDel = document.querySelector(".btnDel");
+      const btnClon = document.querySelector(".btnClon");
+      const container = document.querySelector(".container");
+
+      btnAdd.addEventListener("click", function (e) {
+        const newBox = document.createElement("div");
+        newBox.classList.add("box"); //or className
+        newBox.textContent = container.children.length + 1; // Чтобы задать нумирацию внутри блока, количество дочерних элементов + 1
+        container.append(newBox);
+      });
+
+      btnDel.addEventListener("click", function (e) {
+        if (container.children.length > 0) {
+          const lastBox = container.lastChild;
+          container.removeChild(lastBox);
+        } else {
+          throw new Error("Нечего удалять");
+        }
+      });
+
+      btnClon.addEventListener("click", function (e) {
+        if (container.children.length > 0) {
+          const lastBox = container.lastChild;
+          const clone = lastBox.cloneNode(true); //копируем узел
+          container.append(clone);
+        } else {
+          throw new Error("Нечего клонировать");
+        }
+      });
+    </script>
+  </body>
+</html>

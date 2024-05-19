@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Расписание занятий</h1>
+    <ul class="conteiner"></ul>
+
+    <script>
+      const lessonList = document.querySelector(".conteiner");
+
+      const lessonsData = [
+        { title: "Занятие 1", time: "Время 1", maxPeople: 10, minPeople: 0 },
+        { title: "Занятие 2", time: "Время 2", maxPeople: 8, minPeople: 0 },
+        { title: "Занятие 3", time: "Время 3", maxPeople: 6, minPeople: 0 },
+      ];
+
+      lessonsData.forEach((lesson) => {
+        const lessonsElement = createLesson(
+          lesson.title,
+          lesson.time,
+          lesson.maxPeople,
+          lesson.minPeople
+        );
+
+        lessonList.append(lessonsElement);
+        localStorage.setItem(lesson.title, lesson.minPeople);
+      });
+
+      function createLesson(title, time, maxPeople) {
+        let peopleCounter = parseInt(localStorage.getItem(title));
+
+        const lessonItem = document.createElement("li");
+        lessonItem.classList.add("lesson");
+
+        const lessonTitle = document.createElement("h2");
+        lessonTitle.classList.add("lesson__title");
+        lessonTitle.textContent = title;
+
+        const lessonTime = document.createElement("p");
+        lessonTime.classList.add("lesson__time");
+        lessonTime.textContent = time;
+
+        const lessonMaxPeople = document.createElement("p");
+        lessonMaxPeople.classList.add("lesson__people");
+        lessonMaxPeople.textContent =
+          parseInt(localStorage.getItem(title)) + " из " + maxPeople;
+
+        const signUpButton = document.createElement("button");
+        signUpButton.classList.add("btn-signUp");
+        signUpButton.textContent = "Записаться";
+
+        const сancelEntryButton = document.createElement("button");
+        сancelEntryButton.classList.add("btn-cancelEntry");
+        сancelEntryButton.textContent = "Отменить запись";
+
+        signUpButton.addEventListener("click", function (e) {
+          if (peopleCounter < maxPeople) {
+            peopleCounter++;
+            lessonMaxPeople.textContent = peopleCounter + " из " + maxPeople;
+          }
+          localStorage.setItem(title, peopleCounter);
+          disabledButton();
+        });
+
+        сancelEntryButton.addEventListener("click", function (e) {
+          if (peopleCounter > 0) {
+            peopleCounter--;
+            lessonMaxPeople.textContent = peopleCounter + " из " + maxPeople;
+          }
+          localStorage.setItem(title, peopleCounter);
+
+          disabledButton();
+        });
+
+        function disabledButton() {
+          if (peopleCounter == maxPeople) {
+            signUpButton.disabled = "true";
+          } else {
+            signUpButton.removeAttribute("disabled");
+          }
+        }
+
+        lessonList.append(lessonTitle);
+        lessonList.append(lessonTime);
+        lessonList.append(lessonMaxPeople);
+        lessonItem.append(signUpButton);
+        lessonItem.append(сancelEntryButton);
+
+        return lessonItem;
+      }
+    </script>
+  </body>
+</html>
