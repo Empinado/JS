@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      .slider {
+        position: relative;
+      }
+      .slide {
+        display: none;
+      }
+      .prev {
+        position: absolute;
+        top: 50%;
+        left: -140px;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+      .next {
+        position: absolute;
+        top: 50%;
+        right: -140px;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+      .dots {
+        text-align: center;
+      }
+      .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #333;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+      .active {
+        background-color: #ff0000; /* Цвет активной точки */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="slider-container">
+        <img src="img/1.svg" alt="Image 1" class="slide" />
+        <img src="img/2.svg" alt="Image 2" class="slide" />
+        <img src="img/3.svg" alt="Image 3" class="slide" />
+        <img src="img/4.svg" alt="Image 4" class="slide" />
+        <img src="img/5.svg" alt="Image 5" class="slide" />
+      </div>
+      <button class="prev">Предыдущее изображение</button>
+      <button class="next">Следующее изображение</button>
+      <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <script>
+      //- slideIndex - переменная, которая отслеживает текущий индекс слайда.
+      // - slides - коллекция всех элементов с классом "slide" (изображения слайдера).
+      // - dots - коллекция всех элементов с классом "dot" (навигационные точки).
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+
+      // - showSlide - функция, которая отображает указанный слайд и обновляет активную точку.
+      // - Первые два условия циклически переключаются между слайдами, если достигнут конец или начало коллекции слайдов.
+
+      function showSlide(n) {
+        if (n >= slides.length) {
+          slideIndex = 0;
+        } else if (n < 0) {
+          slideIndex = slides.length - 1;
+        }
+        // - С помощью метода forEach все слайды скрываются, а все точки теряют активное состояние.
+        // - Текущий слайд отображается, а соответствующая точка становится активной.
+        slides.forEach((slide) => (slide.style.display = "none"));
+        dots.forEach((dot) => dot.classList.remove("active"));
+
+        slides[slideIndex].style.display = "block";
+        dots[slideIndex].classList.add("active");
+      }
+
+      // - nextSlide - функция, вызываемая при нажатии на кнопку "Следующее изображение". Увеличивает slideIndex на 1 и вызывает showSlide для отображения следующего слайда.
+      function nextSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+      }
+      // - prevSlide - функция, вызываемая при нажатии на кнопку "Предыдущее изображение". Уменьшает slideIndex на 1 и вызывает showSlide для отображения предыдущего слайда.
+      function prevSlide() {
+        slideIndex--;
+        showSlide(slideIndex);
+      }
+      //  - currentSlide - функция, вызываемая при нажатии на навигационную точку. Устанавливает slideIndex в указанное значение и вызывает showSlide для отображения соответствующего слайда.
+      function currentSlide(n) {
+        slideIndex = n;
+        showSlide(slideIndex);
+      }
+
+      // - Добавляют обработчики событий для кнопок "Следующее изображение" и "Предыдущее изображение", чтобы при клике вызывались соответствующие функции.
+      // - Добавляет обработчики событий для каждой навигационной точки, чтобы при клике вызывалась функция currentSlide с индексом точки.
+
+      document.querySelector(".next").addEventListener("click", nextSlide);
+      document.querySelector(".prev").addEventListener("click", prevSlide);
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => currentSlide(index));
+      });
+
+      showSlide(slideIndex);
+    </script>
+  </body>
+</html>
