@@ -1,0 +1,96 @@
+<!-- https://v3.ru.vuejs.org/ru/guide/installation.html#%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B0 -->
+<!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    @keyframes vision {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .animation {
+      animation: vision 1s ease-in-out;
+    }
+  </style>
+  <body>
+    <div id="app" class="demo">
+      {{ message }}
+      <!-- Создать параграф, внутри которого будет отображаться текст “Товаров в корзине 0” -->
+      <p>Товаров в корзине: {{ count }}</p>
+      <button @click="addCount">{{ btnText }}</button>
+      <button @click="decCount">Удалить товар</button>
+
+      <hr />
+      <button @click="canBuy=!canBuy">Мне исполнилось 14 лет</button>
+      <p v-show="canBuy">Можете заказать товар</p>
+
+      <button @click="cantBuy=!cantBuy">Мне еще нет 14 лет</button>
+      <p v-show="cantBuy">Доступ закрыт</p>
+      <hr />
+
+      <hr />
+      <button @click="isShow=!isShow">Показать еще</button>
+      <p class="animation" v-show="isShow">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+        placeat voluptate, consectetur ipsa pariatur impedit perferendis earum
+        maxime maiores aliquid.
+      </p>
+      <hr />
+
+      <hr />
+      <button @click="random">
+        Генерировать случайное число. Результат генерации: {{number}}
+      </button>
+      <p v-if="number<5">Число меньше 5</p>
+      <p v-else-if="number>=5 && number <=9">Число от 5 до 9</p>
+      <p v-else>Число равно 10</p>
+      <hr />
+    </div>
+
+    <!-- Подключение vue -->
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <script>
+      const HelloVueApp = {
+        data() {
+          return {
+            message: "Hello Vue!!",
+            count: 0,
+            btnText: "Купить",
+            canBuy: false,
+            cantBuy: false,
+            isShow: false,
+            number: null,
+          };
+        },
+        methods: {
+          addCount() {
+            if (this.count < 1) {
+              this.count++;
+              this.btnText = "Товар в корзине";
+            }
+          },
+          decCount() {
+            if (this.count !== 0) {
+              this.count--;
+              this.btnText = "Купить товар";
+            }
+          },
+          random() {
+            this.number = Math.floor(Math.random() * 10 + 1); //Рандом генерит нам число до 1, то есть дробные числа. Умножением на 10, чтобы получить число до 10, но оно никогда не будет равно 10, поэтому мы еще плюсуем 1, чтобы включить 10-ку
+          },
+        },
+      };
+
+      Vue.createApp(HelloVueApp).mount("#app"); //Все что написано во вью, будет отображаться только внутри app в данном случае
+    </script>
+  </body>
+</html>

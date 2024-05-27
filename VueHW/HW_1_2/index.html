@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Task</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="reverseText">Перевернуть</button>
+      <p>{{ reversedText }}</p>
+
+      <button @click="addItem">Добавить</button>
+      <ul>
+        <!-- удаление при нажатии на элемент списка -->
+        <li
+          v-for="(item, index) in items"
+          :key="index"
+          @click="removeItem(index)"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          text: "Привет, мир!",
+          items: ["Элемент списка 1", "Элемент списка 2"],
+        },
+        methods: {
+          reverseText() {
+            this.text = this.text.split("").reverse().join("");
+          },
+          addItem() {
+            this.items.push("Новый элемент списка");
+          },
+          removeItem(index) {
+            this.items.splice(index, 1);
+          },
+        },
+        computed: {
+          reversedText() {
+            return this.text;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
