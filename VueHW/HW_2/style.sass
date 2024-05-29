@@ -76,113 +76,75 @@ img
 
     &__nav a
         color: $baseTextColor
-.banner
-    padding-bottom: 96px
-    &__background
-        border-radius: 70px
-        background-image: url('img/Banner.png')
-        background-repeat: no-repeat
-        background-size: cover
-        overflow: hidden
-        position: relative
-        height: 758px
-    &__content
-        display: flex
-        flex-direction: column
-        height: 342px
-        width: 434px
-        position: absolute
-        top: 208px
-        left: 52px
-    &__title
-        @include fontDMDisplay(65px,125%)
-        padding-bottom: 18px
-    &__text
-        @include fontJost(22px,125%)
-        padding-bottom: 21px
-        color: $baseTextColor2
-    &__btn
-        display: flex
-        flex-direction: row
-        justify-content: center
-        align-items: center
 
-        width: 220px
-        height: 75px
-        background-color: $baseTextColor
-        color: #FFF
-        @include fontJost(18px,125%)
-        font-style: SemiBold
-        border-radius: 18px
-        &_img
-            padding-left: 5px
-            width: 15px
-            height: 13px
-.main
-    &__top
-        display: flex
-        flex-direction: column
-        justify-content: center
-
-    &__title
-        @include fontDMDisplay(50px,125%)
-        color: $baseTextColor
-        text-align: center
-    &__text
-        @include fontJost(22px,150%)
-        color: $baseTextColor2
-        margin-bottom: 93px
-        text-align: center
-    &__item
-        width: 525px
-        padding-bottom: 56px
-    &__img
-        height: 548px
-        width: 525px
-        padding-bottom: 24px
-    &__content
-        display: flex
-        flex-direction: row
-        flex-wrap: wrap
-        justify-content: space-between
-    &__content_title
-        @include fontDMDisplay(25px,150%)
-        color: $baseTextColor
-    &__content_text
-        @include fontJost(22px,150%)
-        color: $baseTextColor2
-    &__desc
-        position: relative
-    &__content_btn_img
-        position: absolute
-        bottom: 0
-        right: 0
-        width: 70px
-        height: 70px
-.counter
+.blog-banner
     display: flex
-    flex-direction: row
-    align-items: center
-    justify-content: space-around
-    background-color: #F4F0EC
-    height: 457px
-    margin-top: 40px
-    &__item
+    justify-content: center
+    align-items: end
+    height: 356px
+    background-image: url("img/blogBanner.png")
+    margin-bottom: 200px
+    &__container
         display: flex
         flex-direction: column
         justify-content: center
-        align-items: center
-        &_count
-            @include fontDMDisplay(85px,125%)
-            color: $countColor
+        text-align: center
+        width: 503px
+        height: 178px
+        background-color: #fff
+        border-radius: 37px 37px 0px 0px
+        &_title
+            @include fontDMDisplay(50px, 125%)
+            color: $baseTextColor
         &_text
             @include fontJost(22px,150%)
             color: $baseTextColor2
 
-.line
-    height: 130px
-    width: 1px
-    background-color: $countColor
+.post
+    margin-bottom: 150px
+    &__title
+        @include fontDMDisplay(50px, 125%)
+        color: $baseTextColor
+        padding-bottom: 27px
+    &__container
+        display: flex
+        flex-direction: row
+        border: 1px solid #E7E7E7
+        border-radius: 52px
+        padding: 22px
+        &_right
+            padding-top: 29px
+            width: 469px
+            height: 198px
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            padding-left: 65px
+        &_title
+            @include fontDMDisplay(25px, 125%)
+            color: $baseTextColor
+            padding-bottom: 22px
+        &_text
+            @include fontJost(22px,150%)
+            color: $baseTextColor2
+            padding-bottom: 41px
+
+    &__img
+        border-radius: 50px
+        width: 569px
+        height: 478px
+
+    &__container_btn
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        &_date
+            @include fontJost(16px,150%)
+            color: $baseTextColor2
+        &_img
+            width: 52px
+            height: 52px
 
 .news
     margin-top: 96px
@@ -191,6 +153,7 @@ img
         display: flex
         flex-direction: row
         gap: 27px
+        flex-wrap: wrap
     &__top
         text-align: center
         margin-bottom: 52px
@@ -208,6 +171,7 @@ img
         padding: 21px
         border: 1px solid #E7E7E7
         border-radius: 62px
+        box-sizing: border-box
         &_top
             display: flex
             justify-content: center
@@ -249,8 +213,31 @@ img
             &_btn
                 width: 52px
                 height: 52px
+    &__page-scroll
+        display: flex
+        flex-direction: row
+        justify-content: center
+        gap: 20px
+        &_btn
+            margin-top: 51px
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 52px
+            height: 52px
+            color: $baseTextColor
+            border: 1px solid #CDA274
+            border-radius: 50%
+        &_btn:active
+            border: 1px solid #F4F0EC
+            background-color: #F4F0EC
+
+        &_img
+            width: 6px
+            grid-template: 13px
+
 .footer
-    padding-top: 96px
+    padding-top: 200px
     display: flex
     flex-direction: row
     justify-content: space-between

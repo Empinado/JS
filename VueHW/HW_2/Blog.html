@@ -19,7 +19,6 @@
   </head>
   <body>
     <div id="app">
-      <!--  -->
       <header class="header center">
         <div class="header__logo">
           <img class="header__img" src="img/Logo.svg" alt="logo" />
@@ -31,12 +30,180 @@
           ><a class="nav__link" href="#">Blog</a>
         </nav>
       </header>
+      <div class="blog-banner">
+        <div class="blog-banner__container center">
+          <h2 class="blog-banner__container_title">Articles & News</h2>
+          <p class="blog-banner__container_text">Home / Blog</p>
+        </div>
+      </div>
+
+      <div class="post center">
+        <h2 class="post__title">Latest Post</h2>
+        <div class="post__container">
+          <img class="post__img" src="img/post/post.svg" alt="item" />
+          <div class="post__container_right">
+            <h2 class="post__container_title">
+              Low Cost Latest Invented Interior Designing Ideas
+            </h2>
+            <p class="post__container_text">
+              Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis
+              dignissim maximus.posuere in.Contrary to popular belief.
+              <br />
+              <br />
+              Lorem Ipsum is not simply random text. It has roots in a piece of
+              classica.
+            </p>
+            <div class="post__container_btn">
+              <p class="post__container_btn_date">26 December,2022</p>
+              <img
+                class="post__container_btn_img"
+                src="img/vector/ellipseWithArrow.svg"
+                alt="ellipseWithArrow"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="news center">
+        <div class="news__top">
+          <h2 class="news__top_title">Articles & News</h2>
+          <p class="news__top_text">
+            It is a long established fact that a reader will be distracted by
+            the of readable content of <br />a page when lookings at its layouts
+            the points of using.
+          </p>
+        </div>
+        <div class="news__container">
+          <div v-for="article in news" :key="article.id" class="news__item">
+            <div class="news__item_top">
+              <img
+                class="news__item_img"
+                :src="article.imgUrl"
+                :alt="news_img"
+              />
+              <button class="news__item_btn">{{article.btnText}}</button>
+            </div>
+            <div class="news__item_btm">
+              <h2 class="news__item_btm_title">{{article.title}}</h2>
+              <div class="news__item_btm_date">
+                <p class="news__item_btm_date_text">{{article.date}}</p>
+                <img
+                  class="news__item_btm_btn"
+                  src="img/vector/ellipseWithArrow.svg"
+                  alt="ellipseWithArrow"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="news__page-scroll">
+          <div class="news__page-scroll_btn">1</div>
+          <div class="news__page-scroll_btn">2</div>
+          <div class="news__page-scroll_btn">3</div>
+          <div class="news__page-scroll_btn">
+            <img
+              class="news__page-scroll_img"
+              src="img/vector/justArrow.svg"
+              alt="arrow"
+            />
+          </div>
+        </div>
+      </div>
+      <footer class="footer center">
+        <div class="footer__logo">
+          <div class="footer__logo_container">
+            <img class="footer__logo_img" src="img/Logo.svg" alt="logo" />
+            <h1 class="footer__logo_title">Interno</h1>
+          </div>
+          <p class="footer__logo_text">
+            It is a long established fact that a reader <br />will be distracted
+            lookings.
+          </p>
+          <div class="footer__logo_links">
+            <a class="footer__logo_link" href="#"
+              ><img
+                class="footer__logo_link_img"
+                src="img/social/twitter.svg"
+                alt="twitter"
+            /></a>
+            <a class="footer__logo_link" href="#"
+              ><img
+                class="footer__logo_link_img"
+                src="img/social/in.svg"
+                alt="twitter"
+            /></a>
+          </div>
+        </div>
+        <div class="footer__pages">
+          <h2 class="footer__pages_title">Pages</h2>
+          <nav class="footer__nav">
+            <a class="nav__link" href="#">Home</a
+            ><a class="nav__link" href="#">Project</a
+            ><a class="nav__link" href="#">Blog</a>
+          </nav>
+        </div>
+        <div class="footer__contacts">
+          <h2 class="footer__contacts_title">Contact</h2>
+          <p class="footer__contacts_text">
+            55 East Birchwood Ave.<br />Brooklyn, New York 11201
+          </p>
+          <p class="footer__contacts_text">contact@interno.com</p>
+          <p class="footer__contacts_text">(123) 456 - 7890</p>
+        </div>
+      </footer>
     </div>
+
     <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
     <script>
       const VueApp = {
         data() {
-          return {};
+          return {
+            news: [
+              {
+                id: 1,
+                title: "Let’s Get Solution For Building Construction Work",
+                imgUrl: "img/news/news1.svg",
+                btnText: "Kitchan Design",
+                date: "26 December,2022",
+              },
+              {
+                id: 2,
+                title: "Low Cost Latest Invented Interior Designing Ideas.",
+                imgUrl: "img/news/news2.svg",
+                btnText: "Living Design",
+                date: "22 December,2022",
+              },
+              {
+                id: 3,
+                title: "Best For Any Office & Business Interior Solution",
+                imgUrl: "img/news/news3.svg",
+                btnText: "Interior Design",
+                date: "25 December,2022",
+              },
+              {
+                id: 4,
+                title: "Let’s Get Solution For Building Construction Work",
+                imgUrl: "img/news/news1.svg",
+                btnText: "Kitchan Design",
+                date: "26 December,2022 ",
+              },
+              {
+                id: 5,
+                title: "Let’s Get Solution For Building Construction Work",
+                imgUrl: "img/news/news2.svg",
+                btnText: "Kitchan Design",
+                date: "26 December,2022 ",
+              },
+              {
+                id: 6,
+                title: "Let’s Get Solution For Building Construction Work",
+                imgUrl: "img/news/news3.svg",
+                btnText: "Kitchan Design",
+                date: "26 December,2022 ",
+              },
+            ],
+          };
         },
       };
 
