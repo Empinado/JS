@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="sortAscending">Сортировать по возрастанию</button>
+      <button @click="sortDescending">Сортировать по убыванию</button>
+
+      <ul>
+        <li v-for="product in sortedProducts" :key="product.id">
+          {{ product.name }} - {{ product.price }}
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3.2.20/dist/vue.global.prod.js"></script>
+    <script>
+      const VueApp = {
+        data() {
+          return {
+            products: [
+              { id: 1, name: "Товар 1", price: 100 },
+              { id: 2, name: "Товар 2", price: 51 },
+              { id: 3, name: "Товар 3", price: 200 },
+              { id: 4, name: "Товар 1", price: 110 },
+              { id: 5, name: "Товар 2", price: 50 },
+              { id: 6, name: "Товар 3", price: 250 },
+            ],
+            sortOrder: "ascending", // По умолчанию сортируем по возрастанию
+          };
+        },
+        computed: {
+          sortedProducts() {
+            return this.products.sort((a, b) => {
+              if (this.sortOrder === "ascending") {
+                return a.price - b.price;
+              } else {
+                return b.price - a.price;
+              }
+            });
+          },
+        },
+        methods: {
+          sortAscending() {
+            this.sortOrder = "ascending";
+          },
+          sortDescending() {
+            this.sortOrder = "descending";
+          },
+        },
+      };
+
+      Vue.createApp(VueApp).mount("#app");
+    </script>
+  </body>
+</html>
