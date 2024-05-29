@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <!--  -->
+      <header class="header center">
+        <div class="header__logo">
+          <img class="header__img" src="img/Logo.svg" alt="logo" />
+          <h1 class="header__title">Interno</h1>
+        </div>
+        <nav class="header__nav">
+          <a class="nav__link" href="#">Home</a
+          ><a class="nav__link" href="#">Project</a
+          ><a class="nav__link" href="#">Blog</a>
+        </nav>
+      </header>
+    </div>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <script>
+      const VueApp = {
+        data() {
+          return {};
+        },
+      };
+
+      Vue.createApp(VueApp).mount("#app");
+    </script>
+  </body>
+</html>

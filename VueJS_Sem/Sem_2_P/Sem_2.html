@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .product__item {
+      border: 1px solid black;
+      padding: 5px;
+      max-width: 250px;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <div class="product__item">
+        <h2>{{product.name}}</h2>
+        <!-- v-bind чтобы передать данные -->
+        <img width="200" :src="product.url" :alt="product.name" />
+        <p>price - {{product.price}}</p>
+        <!-- von по клику реализует метод discaunt/ атрибут disabled забинжена на значение isDisabled -->
+        <button :disabled="isDisabled" @click="discaunt">Скидка</button>
+      </div>
+      <hr />
+      <ul>
+        <!-- v for вывод списка из массива -->
+        <li v-for="user in users" :key="user.id">
+          Name - {{user.name}},age - {{user.age}}
+        </li>
+      </ul>
+      <hr />
+      <ul>
+        <!-- v model обновляет данные в data для объектов массива goods -->
+        <li v-for="good in goods" :key="good.id">
+          <input type="number" v-model.number="good.amount" />
+          <label>
+            <!-- связываем отображаемое название из good.title чекбоксом -->
+            <input type="checkbox" />
+            {{good.title}}
+          </label>
+        </li>
+      </ul>
+      <!-- отменяем превентом отправку формы(сабмит) 
+      /потом связываем в моделом инпуты с данными дата, чтобы они изменялись при вводе-->
+      <form @submit.prevent="createUser">
+        <label>name - <input v-model="name" type="text" /></label>
+        <label>surname -<input v-model="surname" type="text" /></label>
+        <label>email -<input v-model="email" type="email" /></label>
+        <button>Add user</button>
+      </form>
+      <!-- отрисовка контактов -->
+      <ul>
+        <li v-for="user in contacts" :key="user.id">
+          name - {{user.name}} surname - {{user.surname}} email - {{user.email}}
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <script>
+      const VueApp = {
+        data() {
+          return {
+            product: {
+              name: "product",
+              price: 1000,
+              url: "https://cs1.livemaster.ru/storage/91/65/9fcf36b73785397a0ae36f30admw--kukly-i-igrushki-kotik-po-foto.jpg",
+            },
+            isDisabled: false,
+            //massive
+            users: [
+              {
+                id: 1,
+                name: "Leanne Graham",
+                age: 25,
+              },
+              {
+                id: 2,
+                name: "Ervin Howell",
+                age: 33,
+              },
+              {
+                id: 3,
+                name: "Clementine Bauch",
+                age: 34,
+              },
+              {
+                id: 4,
+                name: "Patricia Lebsack",
+                age: 40,
+              },
+              {
+                id: 5,
+                name: "Chelsey Dietrich",
+                age: 18,
+              },
+            ],
+            // изменение данных в переменных через сайт
+            goods: [
+              { id: 1, title: "Хлеб", amount: 1 },
+              { id: 2, title: "Молоко", amount: 20 },
+              { id: 3, title: "Соль", amount: 12 },
+              { id: 4, title: "Сахар", amount: 53 },
+            ],
+            //
+            name: "",
+            surname: "",
+            email: "",
+            contacts: [],
+          };
+        },
+        methods: {
+          discaunt() {
+            const discauntPercent = Math.floor(Math.random() * 20) + 1;
+            this.product.price =
+              this.product.price - (this.product.price * discauntPercent) / 100;
+            this.isDisabled = !this.isDisabled;
+          },
+          createUser() {
+            // трим убирает пробелы, оставляя лишь контент инпута
+            const nameTrim = this.name.trim();
+            const surnameTrim = this.surname.trim();
+            const emailTrim = this.email.trim();
+            if (nameTrim && surnameTrim && emailTrim) {
+              const newUser = {
+                id: this.contacts.length + 1,
+                name: nameTrim,
+                surname: surnameTrim,
+                email: emailTrim,
+              };
+              this.contacts.push(newUser);
+              //очистка инпута
+              this.name = "";
+              this.surname = "";
+              this.email = "";
+              console.log(this.contacts);
+            }
+          },
+        },
+      };
+
+      Vue.createApp(VueApp).mount("#app");
+    </script>
+  </body>
+</html>
