@@ -1,0 +1,227 @@
+// Переменные
+$baseTextColor: #292F36
+$baseTextColor2: #4D5053
+$baseWidth: 1200 px
+$countColor: #CDA274
+
+//mixins
+@mixin laptopCenter()
+    padding-left: calc(50% - 600px)
+    padding-right: calc(50% - 600px)
+@mixin fontDMDisplay($size, $line-height)
+    font-family: "DM Serif Display", serif
+    font-style: normal
+    font-weight: 400
+    font-size: $size
+    line-height: $line-height
+
+@mixin fontJost($size,$line-height)
+    font-family: "Jost", sans-serif
+    font-style: normal
+    font-weight: 400
+    font-size: $size
+    line-height: $line-height
+
+//Стили
+*
+    margin: 0
+    padding: 0
+a
+    text-decoration: none
+
+a:visited
+    text-decoration: none
+
+a:active
+    text-decoration: none
+
+a:hover
+    text-decoration: none
+
+body
+
+    margin: 0
+
+.center
+    @include laptopCenter()
+
+img
+    width: 100%
+
+.header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    height: 50px
+    margin-top: 44px
+    margin-bottom: 57px
+    &__logo
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: 8px
+    &__title
+        @include fontDMDisplay(40px, 125%)
+
+    &__img
+        width: 34px
+        height: 34px
+    &__nav
+        display: flex
+        align-items: center
+        justify-content: end
+        gap: 32px
+        color: $baseTextColor2
+        @include fontJost(20px,125%)
+
+    &__nav a
+        color: $baseTextColor
+
+.blog-banner
+    display: flex
+    justify-content: center
+    align-items: end
+    height: 351px
+    background-image: url("img/blogBanner.png")
+    margin-bottom: 200px
+
+.blog
+    display: flex
+    flex-direction: row
+    margin-bottom: 96px
+    &__page
+        max-width: 799px
+    &__title
+        @include fontDMDisplay(50px, 125%)
+        color: $baseTextColor
+        margin-bottom: 21px
+    &__img
+        max-width: 799px
+        min-height: 539px
+    &__img2
+        max-width: 799px
+        min-height: 365px
+        padding-bottom: 35px
+    &__date
+        padding-top: 46px
+        padding-bottom: 48px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        &_text
+            @include fontJost(16px,150%)
+            color: $baseTextColor2
+    &__text
+        @include fontJost(22px,150%)
+        color: $baseTextColor2
+        span
+            color: #CDA274
+            padding-right: 14px
+    &__quote
+        margin-top: 35px
+        height: 267px
+        display: flex
+        align-items: center
+        flex-direction: column
+        text-align: center
+        justify-content: space-evenly
+        border-radius: 50px
+        background-color: #F4F0EC
+        color: #CDA274
+        margin-bottom: 27px
+        &_img
+            width: 85px
+            height: 113px
+        &_text
+            @include fontDMDisplay(25px, 150%)
+            font-style: italic
+    &__ul
+        padding-top: 24px
+        padding-bottom: 44px
+        display: flex
+        flex-direction: column
+        gap: 32px
+        padding-right: 66px
+.tags
+    margin-left: 52px
+    display: flex
+    flex-direction: column
+    &__title
+        @include fontDMDisplay(25px, 125%)
+        color: $baseTextColor
+        padding-bottom: 24px
+    &__container
+        display: flex
+        flex-wrap: wrap
+        gap: 10px
+    &__btn
+        display: flex
+        align-items: center
+        @include fontJost(18px,150%)
+        color: $baseTextColor2
+        border-radius: 10px
+        height: 41px
+        padding: 9px 30px 9px 30px
+        border: none
+        background-color: #F4F0EC
+    &__btn:active
+        background-color: $baseTextColor2
+        color: #fff
+
+.footer
+    padding-top: 200px
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    min-height: 272px
+    margin-bottom: 134px
+    &__logo
+        display: flex
+        flex-direction: column
+    &__logo_container
+        display: flex
+        flex-direction: row
+        align-items: center
+        padding-bottom: 18px
+    &__logo_title
+        @extend .header__title
+    &__logo_img
+        @extend .header__img
+        padding-right: 10px
+    &__logo_text
+        @include fontJost(22px,150%)
+        color: $baseTextColor2
+        padding-bottom: 21px
+    &__logo_links
+        display: flex
+        gap: 54px
+    &__logo_link_img
+        width: 18px
+        height: 22px
+    &__pages
+        display: flex
+        flex-direction: column
+        gap: 27px
+        padding-right: 322px
+
+        &_title
+            @include fontDMDisplay(25px, 125%)
+            color: $baseTextColor
+    &__nav
+        display: flex
+        flex-direction: column
+        gap: 27px
+
+    &__nav a
+        @include fontJost(22px,150%)
+        color: $baseTextColor2
+    &__contacts
+        display: flex
+        flex-direction: column
+        gap: 27px
+        &_title
+            @include fontDMDisplay(25px, 125%)
+            color: $baseTextColor
+        &_text
+            @include fontJost(22px,150%)
+            color: $baseTextColor2

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog-ditails</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header center">
+        <div class="header__logo">
+          <img class="header__img" src="img/Logo.svg" alt="logo" />
+          <h1 class="header__title">Interno</h1>
+        </div>
+        <nav class="header__nav">
+          <a class="nav__link" href="#">Home</a
+          ><a class="nav__link" href="#">Project</a
+          ><a class="nav__link" href="#">Blog</a>
+        </nav>
+      </header>
+      <div class="blog-banner"></div>
+      <main class="blog center">
+        <div class="blog__page">
+          <h2 class="blog__title">
+            Let’s Get Solution for Building Construction Work
+          </h2>
+          <img class="blog__img" src="img/blog/blog_1.png" alt="blog_img" />
+          <div class="blog__date">
+            <p class="blog__date_text">26 December,2022</p>
+            <p class="blog__date_text">Interior / Home / Decore</p>
+          </div>
+          <p class="blog__text">
+            Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
+            turpmaximus.posuere in.Contrary to popular belief.There are many
+            variations of passages of Lorem Ipsum available, but the majority
+            have suffered alteration in some form, by injecthumour, or
+            randomised words which don't look even slightly believable.
+            Embarrassing hidden in the middle of text. All the Lorem Ipsum
+            generators on the Internet tend to repeat predefined chunks as
+            necessary.
+          </p>
+          <div class="blog__quote">
+            <img class="blog__quote_img" src="img/blog/quotes.svg" alt="" />
+            <p class="blog__quote_text">
+              The details are not the details.<br />They make the design.
+            </p>
+          </div>
+          <h2 class="blog__title">Design sprints are great</h2>
+          <p class="blog__text">
+            Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
+            turpmaximus.posuere in.Contrary to popular belief.There are many
+            variations of passages of Lorem Ipsum available, but the majority
+            have suffered.
+          </p>
+          <section class="blog__ul">
+            <p class="blog__text">
+              <span>1</span>Contrary to popular belief.There are many variations
+              of passages of Lorem Ipsum available, but the majority have
+              suffered.
+            </p>
+            <p class="blog__text">
+              <span>2</span>Contrary to popular belief.There are many variations
+              of passages of Lorem Ipsum available, but the majority have
+              suffered.
+            </p>
+            <p class="blog__text">
+              <span>3</span>Contrary to popular belief.There are many variations
+              of passages of Lorem Ipsum available, but the majority have
+              suffered.
+            </p>
+          </section>
+          <img class="blog__img2" src="img/blog/blog_2.png" alt="blog_img" />
+          <p class="blog__text">
+            Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
+            turpmaximus.posuere in.Contrary to popular belief.There are many
+            variations of passages of Lorem Ipsum available, but the majority
+            have suffered.
+          </p>
+        </div>
+        <div class="tags">
+          <h2 class="tags__title">Tags</h2>
+          <div class="tags__container">
+            <button
+              @click="switchPage(tag.id)"
+              v-for="tag in tags"
+              :key="tag.id"
+              class="tags__btn"
+            >
+              {{tag.name}}
+            </button>
+          </div>
+        </div>
+      </main>
+      <footer class="footer center">
+        <div class="footer__logo">
+          <div class="footer__logo_container">
+            <img class="footer__logo_img" src="img/Logo.svg" alt="logo" />
+            <h1 class="footer__logo_title">Interno</h1>
+          </div>
+          <p class="footer__logo_text">
+            It is a long established fact that a reader <br />will be distracted
+            lookings.
+          </p>
+          <div class="footer__logo_links">
+            <a class="footer__logo_link" href="#"
+              ><img
+                class="footer__logo_link_img"
+                src="img/social/twitter.svg"
+                alt="twitter"
+            /></a>
+            <a class="footer__logo_link" href="#"
+              ><img
+                class="footer__logo_link_img"
+                src="img/social/in.svg"
+                alt="twitter"
+            /></a>
+          </div>
+        </div>
+        <div class="footer__pages">
+          <h2 class="footer__pages_title">Pages</h2>
+          <nav class="footer__nav">
+            <a class="nav__link" href="#">Home</a
+            ><a class="nav__link" href="#">Project</a
+            ><a class="nav__link" href="#">Blog</a>
+          </nav>
+        </div>
+        <div class="footer__contacts">
+          <h2 class="footer__contacts_title">Contact</h2>
+          <p class="footer__contacts_text">
+            55 East Birchwood Ave.<br />Brooklyn, New York 11201
+          </p>
+          <p class="footer__contacts_text">contact@interno.com</p>
+          <p class="footer__contacts_text">(123) 456 - 7890</p>
+        </div>
+      </footer>
+    </div>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+
+    <script>
+      const VueApp = {
+        data() {
+          return {
+            tags: [
+              {
+                id: 1,
+                name: "Kitchen",
+              },
+              {
+                id: 2,
+                name: "Bedroom",
+              },
+              {
+                id: 3,
+                name: "Building",
+              },
+              {
+                id: 4,
+                name: "Architecture",
+              },
+              {
+                id: 5,
+                name: "Kitchen Planning",
+              },
+              {
+                id: 6,
+                name: "Bedroom",
+              },
+            ],
+          };
+        },
+      };
+
+      Vue.createApp(VueApp).mount("#app");
+    </script>
+  </body>
+</html>
