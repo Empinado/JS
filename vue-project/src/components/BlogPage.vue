@@ -2,7 +2,7 @@
   <div class="blog-page">
     <header class="header center">
       <div class="header__logo">
-        <img class="header__img" src="@/assets/img/Logo.svg" alt="logo" />
+        <img class="header__img" src="@/assets/Logo.svg" alt="logo" />
         <h1 class="header__title">Interno</h1>
       </div>
       <nav class="header__nav">
@@ -21,7 +21,7 @@
     <div class="post center">
       <h2 class="post__title">Latest Post</h2>
       <div class="post__container">
-        <img class="post__img" src="@/assets/img/post/post.svg" alt="item" />
+        <img class="post__img" src="@/assets/post/post.svg" alt="item" />
         <div class="post__container_right">
           <h2 class="post__container_title">
             Low Cost Latest Invented Interior Designing Ideas
@@ -38,7 +38,7 @@
             <p class="post__container_btn_date">26 December,2022</p>
             <img
               class="post__container_btn_img"
-              src="@/assets/img/vector/ellipseWithArrow.svg"
+              src="@/assets/vector/ellipseWithArrow.svg"
               alt="ellipseWithArrow"
             />
           </div>
@@ -67,7 +67,7 @@
               <p class="news__item_btm_date_text">{{ article.date }}</p>
               <img
                 class="news__item_btm_btn"
-                src="@/assets/img/vector/ellipseWithArrow.svg"
+                src="@/assets/vector/ellipseWithArrow.svg"
                 alt="ellipseWithArrow"
               />
             </div>
@@ -81,7 +81,7 @@
         <div class="news__page-scroll_btn">
           <img
             class="news__page-scroll_img"
-            src="@/assets/img/vector/justArrow.svg"
+            src="@/assets/vector/justArrow.svg"
             alt="arrow"
           />
         </div>
@@ -90,11 +90,7 @@
     <footer class="footer center">
       <div class="footer__logo">
         <div class="footer__logo_container">
-          <img
-            class="footer__logo_img"
-            src="@/assets/img/Logo.svg"
-            alt="logo"
-          />
+          <img class="footer__logo_img" src="@/assets/Logo.svg" alt="logo" />
           <h1 class="footer__logo_title">Interno</h1>
         </div>
         <p class="footer__logo_text">
@@ -105,13 +101,13 @@
           <a class="footer__logo_link" href="#"
             ><img
               class="footer__logo_link_img"
-              src="@/assets/img/social/twitter.svg"
+              src="@/assets/social/twitter.svg"
               alt="twitter"
           /></a>
           <a class="footer__logo_link" href="#"
             ><img
               class="footer__logo_link_img"
-              src="@/assets/img/social/in.svg"
+              src="@/assets/social/in.svg"
               alt="twitter"
           /></a>
         </div>
@@ -137,7 +133,56 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      news: [
+        {
+          id: 1,
+          title: "Let’s Get Solution For Building Construction Work",
+          imgUrl: "@/assets/news/news1.svg",
+          btnText: "Kitchan Design",
+          date: "26 December,2022",
+        },
+        {
+          id: 2,
+          title: "Low Cost Latest Invented Interior Designing Ideas.",
+          imgUrl: "@/assets/news/news2.svg",
+          btnText: "Living Design",
+          date: "22 December,2022",
+        },
+        {
+          id: 3,
+          title: "Best For Any Office & Business Interior Solution",
+          imgUrl: "@/assets/news/news3.svg",
+          btnText: "Interior Design",
+          date: "25 December,2022",
+        },
+        {
+          id: 4,
+          title: "Let’s Get Solution For Building Construction Work",
+          imgUrl: "@/assets/news/news1.svg",
+          btnText: "Kitchan Design",
+          date: "26 December,2022 ",
+        },
+        {
+          id: 5,
+          title: "Let’s Get Solution For Building Construction Work",
+          imgUrl: "@/assets/news/news2.svg",
+          btnText: "Kitchan Design",
+          date: "26 December,2022 ",
+        },
+        {
+          id: 6,
+          title: "Let’s Get Solution For Building Construction Work",
+          imgUrl: "@/assets/news/news3.svg",
+          btnText: "Kitchan Design",
+          date: "26 December,2022 ",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="css" scoped>
@@ -223,7 +268,7 @@ img {
   justify-content: center;
   align-items: end;
   height: 356px;
-  background-image: url("@/assets/img/blogBanner.png");
+  background-image: url("@/assets/blogBanner.png");
   margin-bottom: 200px;
 }
 .blog-banner__container {

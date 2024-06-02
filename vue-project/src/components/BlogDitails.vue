@@ -2,7 +2,7 @@
   <div class="blog-ditails">
     <header class="header center">
       <div class="header__logo">
-        <img class="header__img" src="@/assets/img/Logo.svg" alt="logo" />
+        <img class="header__img" src="@/assets/Logo.svg" alt="logo" />
         <h1 class="header__title">Interno</h1>
       </div>
       <nav class="header__nav">
@@ -17,11 +17,7 @@
         <h2 class="blog__title">
           Let’s Get Solution for Building Construction Work
         </h2>
-        <img
-          class="blog__img"
-          src="@/assets/img/blog/blog_1.png"
-          alt="blog_img"
-        />
+        <img class="blog__img" src="@/assets/blog/blog_1.png" alt="blog_img" />
         <div class="blog__date">
           <p class="blog__date_text">26 December,2022</p>
           <p class="blog__date_text">Interior / Home / Decore</p>
@@ -38,8 +34,8 @@
         <div class="blog__quote">
           <img
             class="blog__quote_img"
-            src="@/assets/img/blog/quotes.svg"
-            alt=""
+            src="@/assets/blog/quotes.svg"
+            alt="blog__quote_img"
           />
           <p class="blog__quote_text">
             The details are not the details.<br />They make the design.
@@ -69,11 +65,7 @@
             suffered.
           </p>
         </section>
-        <img
-          class="blog__img2"
-          src="@/assets/img/blog/blog_2.png"
-          alt="blog_img"
-        />
+        <img class="blog__img2" src="@/assets/blog/blog_2.png" alt="blog_img" />
         <p class="blog__text">
           Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
           turpmaximus.posuere in.Contrary to popular belief.There are many
@@ -84,12 +76,7 @@
       <div class="tags">
         <h2 class="tags__title">Tags</h2>
         <div class="tags__container">
-          <button
-            @click="switchPage(tag.id)"
-            v-for="tag in tags"
-            :key="tag.id"
-            class="tags__btn"
-          >
+          <button v-for="tag in tags" :key="tag.id" class="tags__btn">
             {{ tag.name }}
           </button>
         </div>
@@ -98,11 +85,7 @@
     <footer class="footer center">
       <div class="footer__logo">
         <div class="footer__logo_container">
-          <img
-            class="footer__logo_img"
-            src="@/assets/img/Logo.svg"
-            alt="logo"
-          />
+          <img class="footer__logo_img" src="@/assets/Logo.svg" alt="logo" />
           <h1 class="footer__logo_title">Interno</h1>
         </div>
         <p class="footer__logo_text">
@@ -113,13 +96,13 @@
           <a class="footer__logo_link" href="#"
             ><img
               class="footer__logo_link_img"
-              src="@/assets/img/social/twitter.svg"
+              src="@/assets/social/twitter.svg"
               alt="twitter"
           /></a>
           <a class="footer__logo_link" href="#"
             ><img
               class="footer__logo_link_img"
-              src="@/assets/img/social/in.svg"
+              src="@/assets/social/in.svg"
               alt="twitter"
           /></a>
         </div>
@@ -260,7 +243,7 @@ img {
   justify-content: center;
   align-items: end;
   height: 351px;
-  background-image: url("@/assets/img/blogBanner.png");
+  background-image: url("@/assets/blogBanner.png");
   margin-bottom: 200px;
 }
 

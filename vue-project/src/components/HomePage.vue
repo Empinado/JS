@@ -2,7 +2,7 @@
   <div class="home-page">
     <header class="header center">
       <div class="header__logo">
-        <img class="header__img" src="@/assets/img/Logo.svg" alt="logo" />
+        <img class="header__img" src="@/assets/Logo.svg" alt="logo" />
         <h1 class="header__title">Interno</h1>
       </div>
       <nav class="header__nav">
@@ -24,7 +24,7 @@
             Get Started
             <img
               class="banner__btn_img"
-              src="@/assets/img/vector/arrow.svg"
+              src="@/assets/vector/arrow.svg"
               alt="arrow"
             />
           </button>
@@ -42,64 +42,48 @@
       <div class="main__content">
         <div class="main__item">
           <div class="main__desc">
-            <img
-              class="main__img"
-              src="@/assets/img/mian/item1.png"
-              alt="item"
-            />
+            <img class="main__img" src="@/assets/mian/item1.png" alt="item" />
             <h2 class="main_content_title">Modern Kitchan</h2>
             <p class="main__content_text">Decor / Artchitecture</p>
             <img
               class="main__content_btn_img"
-              src="@/assets/img/vector/ellipseWithArrow.svg"
+              src="@/assets/vector/ellipseWithArrow.svg"
               alt="ellipseWithArrow"
             />
           </div>
         </div>
         <div class="main__item">
           <div class="main__desc">
-            <img
-              class="main__img"
-              src="@/assets/img/mian/item2.png"
-              alt="item"
-            />
+            <img class="main__img" src="@/assets/mian/item2.png" alt="item" />
             <h2 class="main_content_title">Modern Kitchan</h2>
             <p class="main__content_text">Decor / Artchitecture</p>
             <img
               class="main__content_btn_img"
-              src="@/assets/img/vector/ellipseWithArrow.svg"
+              src="@/assets/vector/ellipseWithArrow.svg"
               alt="ellipseWithArrow"
             />
           </div>
         </div>
         <div class="main__item">
           <div class="main__desc">
-            <img
-              class="main__img"
-              src="@/assets/img/mian/item3.png"
-              alt="item"
-            />
+            <img class="main__img" src="@/assets/mian/item3.png" alt="item" />
             <h2 class="main_content_title">Modern Kitchan</h2>
             <p class="main__content_text">Decor / Artchitecture</p>
             <img
               class="main__content_btn_img"
-              src="@/assets/img/vector/ellipseWithArrow.svg"
+              src="@/assets/vector/ellipseWithArrow.svg"
               alt="ellipseWithArrow"
             />
           </div>
         </div>
         <div class="main__item">
           <div class="main__desc">
-            <img
-              class="main__img"
-              src="@/assets/img/mian/item4.png"
-              alt="item"
-            />
+            <img class="main__img" src="@/assets/mian/item4.png" alt="item" />
             <h2 class="main_content_title">Modern Kitchan</h2>
             <p class="main__content_text">Decor / Artchitecture</p>
             <img
               class="main__content_btn_img"
-              src="@/assets/img/vector/ellipseWithArrow.svg"
+              src="@/assets/vector/ellipseWithArrow.svg"
               alt="ellipseWithArrow"
             />
           </div>
@@ -145,7 +129,7 @@
           <div class="news__item_top">
             <img
               class="news__item_img"
-              src="@/assets/img/news/news1.svg"
+              src="@/assets/news/news1.svg"
               alt="news_img"
             />
             <button class="news__item_btn">Kitchan Design</button>
@@ -159,7 +143,7 @@
               <p class="news__item_btm_date_text">26 December,2022</p>
               <img
                 class="news__item_btm_btn"
-                src="@/assets/img/vector/ellipseWithArrow.svg"
+                src="@/assets/vector/ellipseWithArrow.svg"
                 alt="ellipseWithArrow"
               />
             </div>
@@ -169,7 +153,7 @@
           <div class="news__item_top">
             <img
               class="news__item_img"
-              src="@/assets/img/news/news2.svg"
+              src="@/assets/news/news2.svg"
               alt="news_img"
             />
             <button class="news__item_btn">Living Design</button>
@@ -184,7 +168,7 @@
               <p class="news__item_btm_date_text">26 December,2022</p>
               <img
                 class="news__item_btm_btn"
-                src="@/assets/img/vector/ellipseWithArrow.svg"
+                src="@/assets/vector/ellipseWithArrow.svg"
                 alt="ellipseWithArrow"
               />
             </div>
@@ -194,7 +178,7 @@
           <div class="news__item_top">
             <img
               class="news__item_img"
-              src="@/assets/img/news/news3.svg"
+              src="@/assets/news/news3.svg"
               alt="news_img"
             />
             <button class="news__item_btn">Interior Design</button>
@@ -208,7 +192,7 @@
               <p class="news__item_btm_date_text">26 December,2022</p>
               <img
                 class="news__item_btm_btn"
-                src="@/assets/img/vector/ellipseWithArrow.svg"
+                src="@/assets/vector/ellipseWithArrow.svg"
                 alt="ellipseWithArrow"
               />
             </div>
@@ -220,11 +204,7 @@
     <footer class="footer center">
       <div class="footer__logo">
         <div class="footer__logo_container">
-          <img
-            class="footer__logo_img"
-            src="@/assets/img/Logo.svg"
-            alt="logo"
-          />
+          <img class="footer__logo_img" src="@/assets/Logo.svg" alt="logo" />
           <h1 class="footer__logo_title">Interno</h1>
         </div>
         <p class="footer__logo_text">
@@ -235,13 +215,13 @@
           <a class="footer__logo_link" href="#"
             ><img
               class="footer__logo_link_img"
-              src="@/assets/img/social/twitter.svg"
+              src="@/assets/social/twitter.svg"
               alt="twitter"
           /></a>
           <a class="footer__logo_link" href="#"
             ><img
               class="footer__logo_link_img"
-              src="@/assets/img/social/in.svg"
+              src="@/assets/social/in.svg"
               alt="twitter"
           /></a>
         </div>
@@ -354,7 +334,7 @@ img {
 }
 .banner__background {
   border-radius: 70px;
-  background-image: url("@/assets/img/Banner.png");
+  background-image: url("@/assets/Banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;

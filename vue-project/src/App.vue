@@ -1,5 +1,8 @@
 <template>
   <div>
+    <HomeWork10 />
+    <HeaderComp />
+    <FooterComp />
     <HomePage />
     <BlogPage />
     <BlogDitails />
@@ -10,6 +13,9 @@
 import HomePage from "./components/HomePage.vue";
 import BlogPage from "./components/BlogPage.vue";
 import BlogDitails from "./components/BlogDitails.vue";
+import HeaderComp from "./components/HeaderComp.vue";
+import FooterComp from "./components/FooterComp.vue";
+import HomeWork10 from "./components/HomeWork10.vue";
 
 export default {
   name: "App",
@@ -17,6 +23,9 @@ export default {
     HomePage,
     BlogPage,
     BlogDitails,
+    HeaderComp,
+    FooterComp,
+    HomeWork10,
   },
 };
 </script>
@@ -29,5 +38,38 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+}
+
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+img {
+  width: 100%;
 }
 </style>
