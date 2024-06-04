@@ -1,31 +1,41 @@
 <template>
   <div>
-    <HomeWork10 />
+    <BlogBanner />
+    <ProjectContent />
+    <FooterComp />
+    <!-- <HomeWork10 />
     <HeaderComp />
     <FooterComp />
     <HomePage />
     <BlogPage />
-    <BlogDitails />
+    <BlogDitails /> -->
   </div>
 </template>
 
 <script>
-import HomePage from "./components/HomePage.vue";
-import BlogPage from "./components/BlogPage.vue";
-import BlogDitails from "./components/BlogDitails.vue";
-import HeaderComp from "./components/HeaderComp.vue";
+// import HomePage from "./components/HomePage.vue";
+// import BlogPage from "./components/BlogPage.vue";
+// import BlogDitails from "./components/BlogDitails.vue";
+// import HeaderComp from "./components/HeaderComp.vue";
 import FooterComp from "./components/FooterComp.vue";
-import HomeWork10 from "./components/HomeWork10.vue";
+// import HomeWork10 from "./components/HomeWork10.vue";
+import BlogBanner from "./components/BlogBanner.vue";
+import ProjectContent from "./components/ProjectContent.vue";
 
 export default {
   name: "App",
+  data() {
+    return {};
+  },
   components: {
-    HomePage,
-    BlogPage,
-    BlogDitails,
-    HeaderComp,
+    // HomePage,
+    // BlogPage,
+    // BlogDitails,
+    // HeaderComp,
     FooterComp,
-    HomeWork10,
+    // HomeWork10,
+    BlogBanner,
+    ProjectContent,
   },
 };
 </script>
