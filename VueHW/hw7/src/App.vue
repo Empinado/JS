@@ -22,11 +22,6 @@ import FooterComp from "./components/FooterComp.vue";
 // import HomeWork10 from "./components/HomeWork10.vue";
 import BlogBanner from "./components/BlogBanner.vue";
 // import ProjectContent from "./components/ProjectContent.vue";
-// import { Swiper, SwiperSlide } from "swiper/vue";
-// import "swiper/css/zoom";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-
 import ProjectDetails from "./components/ProjectDetails.vue";
 
 export default {
@@ -45,11 +40,6 @@ export default {
     // ProjectContent,
     ProjectDetails,
   },
-  // setup() {
-  //   return {
-  //     modules: [Zoom, Navigation, Pagination],
-  //   };
-  // },
 };
 </script>
 
