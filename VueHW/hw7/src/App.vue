@@ -1,28 +1,34 @@
 <template>
   <div>
-    <BlogBanner />
+    <!-- <BlogBanner /> -->
     <!-- <ProjectContent /> -->
-    <ProjectDetails />
-    <FooterComp />
+    <!-- <ProjectDetails /> -->
+    <!-- <FooterComp /> -->
     <!-- <HomeWork10 />
     <HeaderComp />
     <FooterComp />
     <HomePage />
     <BlogPage />
     <BlogDitails /> -->
+    <HeaderExample />
+    <router-view></router-view>
+    <!-- отслеживает и отображает нужную страницу -->
   </div>
 </template>
 
 <script>
+// import HeaderCompVue from "./components/HeaderComp.vue";
+// import HeaderExampleVue from "./components/HeaderExample.vue";
 // import HomePage from "./components/HomePage.vue";
 // import BlogPage from "./components/BlogPage.vue";
 // import BlogDitails from "./components/BlogDitails.vue";
 // import HeaderComp from "./components/HeaderComp.vue";
-import FooterComp from "./components/FooterComp.vue";
+// import FooterComp from "./components/FooterComp.vue";
 // import HomeWork10 from "./components/HomeWork10.vue";
-import BlogBanner from "./components/BlogBanner.vue";
+// import BlogBanner from "./components/BlogBanner.vue";
 // import ProjectContent from "./components/ProjectContent.vue";
-import ProjectDetails from "./components/ProjectDetails.vue";
+// import ProjectDetails from "./components/ProjectDetails.vue";
+import HeaderExample from "./components/HeaderExample.vue";
 
 export default {
   name: "App",
@@ -34,11 +40,12 @@ export default {
     // BlogPage,
     // BlogDitails,
     // HeaderComp,
-    FooterComp,
+    // FooterComp,
     // HomeWork10,
-    BlogBanner,
+    // BlogBanner,
     // ProjectContent,
-    ProjectDetails,
+    // ProjectDetails,
+    HeaderExample,
   },
 };
 </script>
@@ -57,7 +64,7 @@ export default {
   padding: 0;
 }
 
-a {
+/* a {
   text-decoration: none;
 }
 
@@ -71,7 +78,7 @@ a:active {
 
 a:hover {
   text-decoration: none;
-}
+} */
 
 body {
   margin: 0;
